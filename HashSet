@@ -1,0 +1,36 @@
+#Java HashSet example to remove elements
+#Here, we see different ways to remove an element.
+import java.util.*;  
+class HashSet{  
+ public static void main(String args[]){  
+  HashSet<String> set=new HashSet<String>();  
+           set.add("Sunita");  
+           set.add("Vijay");  
+           set.add("Ayushi");  
+           set.add("Samiksha");  
+           System.out.println("An initial list of elements: "+set);  
+           //Removing specific element from HashSet  
+           set.remove("Ravi");  
+           System.out.println("After invoking remove(object) method: "+set);  
+           HashSet<String> set1=new HashSet<String>();  
+           set1.add("Amit");  
+           set1.add("Gauranshu");  
+           set.addAll(set1);  
+           System.out.println("Updated List: "+set);  
+           //Removing all the new elements from HashSet  
+           set.removeAll(set1);  
+           System.out.println("After invoking removeAll() method: "+set);  
+           //Removing elements on the basis of specified condition  
+           set.removeIf(str->str.contains("Vijay"));    
+           System.out.println("After invoking removeIf() method: "+set);  
+           //Removing all the elements available in the set  
+           set.clear();  
+           System.out.println("After invoking clear() method: "+set);  
+ }  
+}  
+An initial list of elements: [Vijay, Sunita, Ayushi, Samiksha]
+After invoking remove(object) method: [Vijay, Ayushi, Samiksha]
+Updated List: [Vijay, Ayushi, Gauranshu, Samiksha, Amit]
+After invoking removeAll() method: [Vijay, Ayushi, Samiksha]
+After invoking removeIf() method: [Ayushi, Samiksha]
+After invoking clear() method: []
